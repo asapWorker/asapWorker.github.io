@@ -30,22 +30,31 @@ class App extends React.Component {
                 let answer = src[random(0, level)];
                 console.log(answer);
                 console.log(countOfAnswers);
+                let answersIndexes = new Set();
                 let used = new Set([answer]);
                 let cards = [];
+
+                for (let i = 0; i < countOfAnswers; i++) {
+                    while(true) {
+                        let ind = random(0, level);
+                        if (!answersIndexes.has(ind)) {
+                            answersIndexes.add(ind);
+                            break;
+                        }
+                    }
+                }
                 this.setState(this.state = {status: "current", flag: level - countOfAnswers, level: level, changeFlag: changeFlag});
                 for (let i = 0; i < level; i++) {
-                    let isRight = 0;
                     let isAnswer = 'wrong';
                     let value = 0;
-                    if (countOfAnswers !== 0) {
-                        isRight = random(0,2);
-                        if (isRight === 1) {
+                    if (countOfAnswers !== 0 && answersIndexes.has(i)) {
+                        {
                             countOfAnswers--;
                             isAnswer = 'truth';
                             value = answer;
                         }
                     }
-                    if (isRight === 0) {
+                    else {
                         while (true) {
                             value = src[random(0, level)];
                             if (!used.has(value)) {
@@ -54,7 +63,8 @@ class App extends React.Component {
                             }
                         }
                     }
-                    cards.push(<Card src={value + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i}/>)
+                    cards.push(<Card src={src[value] + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i}/>)
+
                 }
                 this.setState(this.state = {cards: cards});
             },
@@ -85,7 +95,7 @@ class App extends React.Component {
         } else {
             return <Fragment>
                 <Result flag={this.state.flag} num={this.state.level}/>
-                <input type="button" value="return" onClick={this.state.restartGame.bind(this)}/>
+                <input type="button" value="return" onClick={this.state.restartGame.bind(this)} style={{position: 'absolute', top: 0, zIndex: 1001}}/>
             </Fragment>
         }
     }
