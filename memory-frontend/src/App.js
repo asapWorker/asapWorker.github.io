@@ -7,6 +7,8 @@ import {Result} from "./components/result/Result";
 import {Level} from "./components/level/Level";
 import {Container} from "./components/container/Container";
 
+let countOfPictures = 25;
+
 class App extends React.Component {
     constructor(props) {
         super(props);
@@ -25,9 +27,8 @@ class App extends React.Component {
                 function changeFlag(value) {
                     this.setState(this.state = {flag: this.state.flag + value})
                 }
-                let src = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25];
                 let countOfAnswers = random(4, 7);
-                let answer = src[random(0, level)];
+                let answer = random(0, countOfPictures);
                 console.log(answer);
                 console.log(countOfAnswers);
                 let answersIndexes = new Set();
@@ -56,14 +57,14 @@ class App extends React.Component {
                     }
                     else {
                         while (true) {
-                            value = src[random(0, level)];
+                            value = random(0, countOfPictures);
                             if (!used.has(value)) {
                                 used.add(value);
                                 break;
                             }
                         }
                     }
-                    cards.push(<Card src={src[value] + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i}/>)
+                    cards.push(<Card src={"https://pictures-for-memory-game.s3.eu-north-1.amazonaws.com/" + (value + 1) + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i}/>)
 
                 }
                 this.setState(this.state = {cards: cards});
