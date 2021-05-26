@@ -1,6 +1,6 @@
 .result {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #6f2e9d;
@@ -16,4 +16,40 @@
     margin-top: 5%;
     font-size: 8rem;
     color: #9d2547;
+}
+
+@media (max-width: 770px) {
+    .result {
+        font-size: 4rem;
+    }
+    .result .data {
+        margin-top: 3%;
+        font-size: 5rem;
+    }
+}
+@media (max-width: 575px) {
+    .result {
+        font-size: 3rem;
+    }
+    .result .data {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .result {
+        font-size: 2rem;
+    }
+    .result .data {
+        font-size: 3rem;
+    }
+}
+
+@media (max-height: 575px) {
+    .result {
+        font-size: 2rem;
+    }
+    .result .data {
+        font-size: 3rem;
+    }
 }

@@ -6,6 +6,8 @@ export class Level extends React.Component {
         super(props);
     }
     render() {
-        return <input type="button" value={this.props.name} className={"level"} onClick={this.props.action}/>
+        return <button className={"level"}>
+            <div>{this.props.name}</div>
+        </button>
     }
 }

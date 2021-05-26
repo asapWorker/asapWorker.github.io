@@ -1,8 +1,9 @@
 /* Styles for table */
 .table {
     padding: 0 5%;
-    height: 100vh;
+    height: 86vh;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
+

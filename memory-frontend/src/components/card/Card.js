@@ -1,10 +1,12 @@
 import React, {useContext} from 'react'
 import './Card.css'
 
+import {initializeAssistant} from "../../App";
+
 export class Card extends React.Component {
     img;
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             status: "open",
             checked: "",
@@ -22,7 +24,7 @@ export class Card extends React.Component {
     }
     render() {
         return <div className={'card ' + this.props.level}>
-            <div className={'item ' + this.props.answer + ' ' + this.state.checked} onClick={this.check.bind(this)}>
+            <div className={'item ' + this.props.answer + ' ' + this.state.checked}>
                 <div className={"index " + this.state.status}>{this.props.index}</div>
                 <img className={"picture " + this.state.status} src={this.props.src} alt=""/>
             </div>
