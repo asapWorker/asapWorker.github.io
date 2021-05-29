@@ -45,7 +45,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: 900;
+    z-index: 200;
 }
 .item.wrong.checked {
     background-color: #c09299;

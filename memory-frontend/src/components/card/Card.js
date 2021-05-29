@@ -10,6 +10,7 @@ export class Card extends React.Component {
         this.state = {
             status: "open",
             checked: "",
+            time: true,
         };
     }
     check() {
@@ -22,7 +23,11 @@ export class Card extends React.Component {
             }
         }
     }
+    makeResult() {
+        this.setState(this.state = {status: "open", time: false, checked: "checked"});
+    }
     render() {
+        console.log(this.state.time);
         return <div className={'card ' + this.props.level}>
             <div className={'item ' + this.props.answer + ' ' + this.state.checked}>
                 <div className={"index " + this.state.status}>{this.props.index}</div>
@@ -31,6 +36,8 @@ export class Card extends React.Component {
         </div>
     }
     componentDidMount() {
-        setTimeout(() => {this.setState(this.state = {status: "close"})}, 7000)
+        if (this.state.time === true) {
+            setTimeout(() => {this.setState(this.state = {status: "close"})}, 7000)
+        }
     }
 }

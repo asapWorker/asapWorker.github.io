@@ -1,0 +1,6 @@
+.start_page {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #fff, #fff, #a1a6aa);
+}

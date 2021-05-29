@@ -13,12 +13,12 @@ import {Result} from "./components/result/Result";
 import {Level} from "./components/level/Level";
 import {Container} from "./components/container/Container";
 
-let countOfPictures = 25;
+const countOfPictures = 25;
 
 const initializeAssistant = (getState/*: any*/) => {
     if (process.env.NODE_ENV === "development") {
         return createSmartappDebugger({
-            token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZTFmNTQxODM0NzEwNjkyNzAzM2QwYTQ0ODFmMTNkNTJiMTA1N2NhMWNkY2I0OTg0ZGNiMWQxZjQzMzdhMzYyNTM5YmU5MjcwMDQyNjI5OCIsImF1ZCI6IlZQUyIsImV4cCI6MTYyMjIwNTU4MiwiaWF0IjoxNjIyMTE5MTcyLCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiYWEwM2UxNzQtNTc4YS00MWM5LWJiN2ItN2FkMDhlMTVkMzQwIiwic2lkIjoiZDRmMTliMzItY2FhNS00ZWY3LTllNWYtM2NkOWNjNWM3ZDNlIn0.EUsLL2WWjcckFrq4fuii-ZiUt1gaPXszLaPngO-QjGZI0AOPuURM3ZlrH-W8LCn7p200QI7Z67PEbGkrVqdHXErYs1LTT8T-uu9LktqAh8ibE2gv8r5fGVqaK5Il4WZQ_MKkG38ruioS9sAGz3qf5iLppxWrNVE2CxNLeShNK3o2Dcaq_EOiDo22vczUwuCttuTMqwGq-TsbO2NP_NU47Cq-RoivIZCOYG1yredb7IBrBM1sT2MXrkFZ2xmxYveRpkAh64AX5JWehO6BhbELsgUyYlMO135gM6GOVoxY3d_7P1x3FfztNlN1SVrVOXS-8x810uw7mNme2fb6ayd9-yPi1zvcfLcm6OR_TyOI8AZOun6UXxIJxosIFOnaYq6nb0KFRKSUPWYP2gAFgDIexgPE8-4mAI1ZIMcmF5V1C87Pf9eEdWruYWQaT5-JF17XRSJmiQ-cXqLZxzFAhE_KUnLmGdZ0BK8P_HVjgO9GuGokHXqPdRXyl2C0tpJhP0InNhUTwTHt-TriTn52iVLPpfLLwR2c6MQ1lyM5lFenZuZvs1kqLSnVgcPiDvG1AMopL-vOWT5LVebSzcZSsf5O8FK5Cl-Jt5S7VmR8BHjs0M6Y86iPU2t5DAwZDwYhVs1GU14HE_rN0XUS5APyw0bVh1BHastV6VHTdW_AjG0k94A" ?? "",
+            token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZTFmNTQxODM0NzEwNjkyNzAzM2QwYTQ0ODFmMTNkNTJiMTA1N2NhMWNkY2I0OTg0ZGNiMWQxZjQzMzdhMzYyNTM5YmU5MjcwMDQyNjI5OCIsImF1ZCI6IlZQUyIsImV4cCI6MTYyMjM1NDgyNiwiaWF0IjoxNjIyMjY4NDE2LCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiNGYzMDE1YmYtMDY0My00ZjM5LTkzZGMtZjBjMjNhYWY4MWY4Iiwic2lkIjoiNjU3NmJiNTktNDAxOC00ODc3LWFhNDEtMWZmOGNiMzFiZmY2In0.G4YrZ17I1wvxVDi9t4_Htwd4P_GAnlwJ5TSmhfJXP5jYfBioP_DdgDfO3w0pi1qRiFj7mFXN_a4i-I07ntr14ZE0itN2jNUu_IyGDVWR1u-MO0sfuWsE5QUvgepPdT4CztXI02oAx0jFH68_DWck2SFyN1gzb4EDi5K3Kvfcu5qXcJ6I-xFwu7vhisT491PjrC9jOhP-fTdMcy2LZrkD1INsDz9hp8Z4oNfNuQMVQZm8y6QscrwTDKAdsKWHTtq_gJ3XxZ9vGV2wqGUAs0gDMCMPNqOeAeH7CyWCH5K8f2oYcDH-UIFOHmhdpo9zzl72xznNBO_kgh99tD9gyQgwVa4UGBUlsMYl716GVer7FLHh9fpiMiN0msI_x_dRgsImM4kMRbwrQMkuN_e2YSNtZcjYV2Rbi_x2J-eBSIEUrOTL8adUU-NWzK59-0iFofpGm0YxcstAHYfxhkresSqQ_NYtuf7xF8kWiIYFjvNW9MH7Y1SPlzm0IwyJ2WwjrQ_bmLAGjIQsCStHJUliJ7MZ8wDOpxADGNlqc0the9irOcy5t7xZ2zHIhjoacHdyoujJW9F8UH8h-oyaa1FAEx2ROZxrHS1lcLuDOGh13D8TWEQVDEk4hIkjSMXMB7c23_11c8A4fWQR_zolhrHFImfndwCByq767dv4vMbA1rcoPrI" ?? "",
             initPhrase: 'Запусти память',
             getState,
         });
@@ -93,19 +93,24 @@ class App extends React.Component {
                         }
                     }
                     this["c" + i] = React.createRef();
-                    cards.push(<Card src={"https://pictures-for-memory-game.s3.eu-north-1.amazonaws.com/" + (value + 1) + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i} ref={this['c' + i]} />)
+                    cards.push(<Card src={"https://pictures-for-memory-game.s3.eu-north-1.amazonaws.com/" + (value + 1) + ".jpg"} index={i + 1} status={"open"} answer={isAnswer} level={'level_' + level} changeParentFlag={changeFlag.bind(this)} key={i} time={true} ref={this['c' + i]} />)
 
                 }
                 this.setState(this.state = {cards: cards});
             },
             finishGame() {
-                this.setState(this.state = {status: "finish"})
+                for (let i = 0; i < this.state.level; i++) {
+                    this['c' + i].current.makeResult();
+                }
+                this.resultRef.current.makeResult(this.state.flag, this.state.level);
+                this.setState(this.state = {status: "finish"});
             },
             restartGame() {
                 this.setState(this.state = {status: "start"})
             }
         }
     }
+    resultRef = React.createRef();
     getStateForAssistant () {
         console.log('getStateForAssistant: this.state:', this.state)
         const state = {};
@@ -148,21 +153,18 @@ class App extends React.Component {
     }
     render() {
         if (this.state.status === "start") {
-            return <Container>
-                <Level num={1} name={"легкий уровень"}/>
-                <Level num={2} name={"средний уровень"}/>
-                <Level num={3} name={"сложный уровень"}/>
-            </Container>
-        } else if (this.state.status === "current") {
+            return <div className={"start_page"}>
+                <Container>
+                    <Level num={1} name={"легкий уровень"}/>
+                    <Level num={2} name={"средний уровень"}/>
+                    <Level num={3} name={"сложный уровень"}/>
+                </Container>
+            </div>
+        } else if (this.state.status === "current" || this.state.status === "finish") {
             return <Fragment>
                 <Timer/>
-                <Table>
-                    {this.state.cards}
-                </Table>
-            </Fragment>
-        } else {
-            return <Fragment>
-                <Result flag={this.state.flag} num={this.state.level}/>
+                <Table>{this.state.cards}</Table>
+                <Result ref={this.resultRef}></Result>
             </Fragment>
         }
     }
