@@ -1,0 +1,46 @@
+.container {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+}
+
+@media (max-width: 990px) {
+    .container {
+        width: 70%;
+    }
+}
+
+@media (max-width: 770px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 575px) {
+    .container {
+        width: 90%;
+    }
+}
+
+@media (max-height: 500px) {
+    .container {
+        top: 36%;
+    }
+}
+
+@media (max-height: 370px) {
+    .container {
+        max-width: 350px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+
+@media (max-height: 300px) {
+    .container {
+        top: 30%;
+    }
+}
