@@ -2,7 +2,7 @@
   "name": "memory-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://asapworker.github.io",
+  "homepage": "https://asapworker.github.io/",
   "dependencies": {
     "@sberdevices/assistant-client": "^2.14.1",
     "@testing-library/jest-dom": "^5.12.0",
