@@ -4,3 +4,28 @@
     height: 100vh;
     background-image: linear-gradient(to bottom, #fff, #fff, #a1a6aa);
 }
+
+.next {
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    position: absolute;
+    background-image: linear-gradient(45deg, #5280dc, #41b6ec);
+    top: 3%;
+    right: 1%;
+    height: 5%;
+    width: 7%;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffec;
+
+    box-shadow: 0.3em 0.3em 1em #395199;
+    z-index: 300;
+}
+.next:hover {
+    background-image: linear-gradient(45deg, #8fb2f5, #b7e2fd);
+}
+.next:focus {
+    background-image: linear-gradient(45deg, #1abf8b, #b7e2fd);
+    color: #fff;
+}

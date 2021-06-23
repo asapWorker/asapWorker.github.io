@@ -18,6 +18,7 @@ export class Result extends React.Component {
             <div className={"result_container"}>
                 <div className={"text"}>Ваш результат:</div>
                 <div className={"data"}>{this.state.flag + " из " + this.state.num}</div>
+                <button onClick={this.props.restart} className={'btn'}>главная</button>
             </div>
         </div>
     }

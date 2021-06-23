@@ -18,7 +18,7 @@ const countOfPictures = 25;
 const initializeAssistant = (getState/*: any*/) => {
     if (process.env.NODE_ENV === "development") {
         return createSmartappDebugger({
-            token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZTFmNTQxODM0NzEwNjkyNzAzM2QwYTQ0ODFmMTNkNTJiMTA1N2NhMWNkY2I0OTg0ZGNiMWQxZjQzMzdhMzYyNTM5YmU5MjcwMDQyNjI5OCIsImF1ZCI6IlZQUyIsImV4cCI6MTYyMzAxMDc1MSwiaWF0IjoxNjIyOTI0MzQxLCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiYjM4ZjEyM2YtY2QwNi00YzZmLWFjM2EtNDMxODcyNjlhOTdkIiwic2lkIjoiZjk5YzlkMTMtNjNhZi00ZTBhLWEyNjYtMTg2YTQ3NGQwYTRkIn0.oJrloeI49IiijcWNHycouraesKXfZ3nUqZEnSmvyFz4dJ-RzEb8oTbPDJbNcaxQRlK85--0h56SkmggSpceGGP3X5uWL-zmdNmoXkaVP50SI58YhfM07Ma1cU4-qV0SATwdVemtwrvX8yDH0inqlGXOoI49EissB3Ma2Q4gK65nDiStAspF2bZTk0705M_skE_OYs2ZZ2HwsPW4I7jHzDr1WQGai5eBgvrsade73zMJrWPhpxZY1rRXWQYxLM2v0fG3YmGdW4ONElN71iMlXothH8rBSWvbW3OTlE7zjcxr6OqhGobGfNdVS_23RTIhp0CRMje3L-9I0KisUjL7uNlX7-IImhvR0gaPamInKQVRzzlvd2A7LDnyVZ6zqpHsCZ7dJrzX-kLElAKAjrkCadFeNhyL5NdYTub3SvDSrMA_5BvP9mlfqkfc0K1XBrA5Y4AjW_2JKT0LSaPu5L00VEK_qdZ98LE8x__Kzy1n19LyZ-ThhkpZJ8nJu80_Q60yHzwWfzXQ_YX-zGRuCW5ow668m8wPi2nb1GI70BXiUVTSjXfbMH2BMWzKYUnHJU0INF-KOc4o6u-Ib5YLKaERl9WClIkclINGSOoVtvgc3vi3Q0jtPr0Ko0YtrZpUY-w9cQigA-hSQ83b4q4RTzxtetoTUWNQ_4EiOTph-6SfDwpE" ?? "",
+            token: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZTFmNTQxODM0NzEwNjkyNzAzM2QwYTQ0ODFmMTNkNTJiMTA1N2NhMWNkY2I0OTg0ZGNiMWQxZjQzMzdhMzYyNTM5YmU5MjcwMDQyNjI5OCIsImF1ZCI6IlZQUyIsImV4cCI6MTYyNDUxMTk2MSwiaWF0IjoxNjI0NDI1NTUxLCJpc3MiOiJLRVlNQVNURVIiLCJ0eXBlIjoiQmVhcmVyIiwianRpIjoiY2I1YmZiMjYtNDhmMi00MmRiLTkwZjItOTUwMjlmYzljMGI1Iiwic2lkIjoiZDlkNDJmNDgtMTAyNy00YzI3LTk1NWQtZGFhYmU1YWNiYjBiIn0.InSgyngGJw66oPsFhej-jHEI5VG4zr51gr06yIQHGjC97y4-AMsMtLMdFRxzWPsmSIVGRiqnpWl7uLzueBCaTdvOLwU_ei5bvhZ1Q62jzVGakNefUEPpLmD2KXkyWJIK5e30D7WPJd3HPzmon1xBwKZu3bDAJepjlSaFwt6HT09U4zjejH6DkzoZ6kVySAejongchOddrMnU0-XNyL6JsgwJAuKn-sgTSOYwWhgjdSF2k5hhv7uc_UasXC8kyi2XAOhJ_eXTKDfe_Mkv4lUxfB8ToAG1crLtGuekhbRh5woUgOlQctV1o2jte39eev2EafLjwrLYM845j3LVrlO7qR7z60nvEh4Y9JTbvvy25wEuWM6ffuEDAC0Vk5iDQvOnsJP8X8P3Eaw6vNIUGSKzLfIB8MqU1xyYdchb4JC4aV5_rSKuggvRWgBxdmznABnITRKXhSV_0vpgjijXusZEtclUG9AE3CNJjDWUcD_ESlJZSoUnonvqwVLvcvpU2uAaaaKz6VAPjOS3L-7nT1Japdvp0JS9C4pvrJsLJ_EzFAKCUdj5BqW-f6UQMW5ZQZlKPN7au7MY5GMrMDUHDWnqsCkceIFwQ4fM4az94_o5T15-tJOEz-iIFIvnytGUgABmn7DfgmJa6oeYNwtabQKMchTo1yiu-3YJydJcOzVH0Ts" ?? "",
             initPhrase: 'Запусти тренажер памяти',
             getState,
         });
@@ -99,6 +99,7 @@ class App extends React.Component {
                 this.setState(this.state = {cards: cards});
             },
             finishGame() {
+                this.next.current.style.display = 'none';
                 for (let i = 0; i < this.state.level; i++) {
                     this['c' + i].current.makeResult();
                 }
@@ -111,6 +112,7 @@ class App extends React.Component {
         }
     }
     resultRef = React.createRef();
+    next = React.createRef();
     getStateForAssistant () {
         console.log('getStateForAssistant: this.state:', this.state)
         const state = {};
@@ -126,9 +128,7 @@ class App extends React.Component {
                     }
                     return;
                 case "middle_level":
-                    if (this.state.status === "start") {
                         this.state.startGame.call(this, 16);
-                    }
                     return;
                 case "hard_level":
                     if (this.state.status === "start") {
@@ -155,16 +155,17 @@ class App extends React.Component {
         if (this.state.status === "start") {
             return <div className={"start_page"}>
                 <Container>
-                    <Level num={1} name={"легкий уровень"}/>
-                    <Level num={2} name={"средний уровень"}/>
-                    <Level num={3} name={"сложный уровень"}/>
+                    <Level num={1} name={"легкий уровень"} startGame={this.state.startGame.bind(this, 9)}/>
+                    <Level num={2} name={"средний уровень"} startGame={this.state.startGame.bind(this, 16)}/>
+                    <Level num={3} name={"сложный уровень"} startGame={this.state.startGame.bind(this, 25)}/>
                 </Container>
             </div>
         } else if (this.state.status === "current" || this.state.status === "finish") {
             return <Fragment>
                 <Timer/>
                 <Table>{this.state.cards}</Table>
-                <Result ref={this.resultRef}></Result>
+                <Result restart={this.state.restartGame.bind(this)} ref={this.resultRef}></Result>
+                <button className={'next'} ref={this.next} onClick={this.state.finishGame.bind(this)}>готово</button>
             </Fragment>
         }
     }

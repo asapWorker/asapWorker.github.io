@@ -2,7 +2,7 @@
     display: block;
     position: relative;
     width: 100%;
-    background-image: linear-gradient(50deg, #708295, #63c4b1, #848999); ;
+    background-image: linear-gradient(50deg, #708295, #63c4b1, #848999);
     padding: 3% 5%;
     border: none;
     outline: 0.1em solid #fff;
@@ -13,6 +13,13 @@
     color: #fff;
     text-shadow: 0px 3px 3px #018770;
     box-shadow: 0vh 0vh 2vh #c8fcec;
+}
+.level:hover {
+    background-image: linear-gradient(50deg, #8d9eaf, #85d7c9, #b3b6c2);
+}
+.level:focus {
+    background-image: linear-gradient(50deg, #8d9eaf, #85d7c9, #b3b6c2);
+    outline: 0.1em solid #fff5b7;
 }
 .level div {
     text-align: center;

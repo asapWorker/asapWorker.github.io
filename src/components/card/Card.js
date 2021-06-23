@@ -28,10 +28,10 @@ export class Card extends React.Component {
     }
     render() {
         console.log(this.state.time);
-        return <div className={'card ' + this.props.level}>
-            <div className={'item ' + this.props.answer + ' ' + this.state.checked}>
-                <div className={"index " + this.state.status}>{this.props.index}</div>
-                <img className={"picture " + this.state.status} src={this.props.src} alt=""/>
+        return <div onClick={this.check.bind(this)} className={'card ' + this.props.level}>
+            <div onClick={this.check.bind(this)} className={'item ' + this.props.answer + ' ' + this.state.checked}>
+                <div onClick={this.state.check} className={"index " + this.state.status}>{this.props.index}</div>
+                <img onClick={this.state.check} className={"picture " + this.state.status} src={this.props.src} alt=""/>
             </div>
         </div>
     }
